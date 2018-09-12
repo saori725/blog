@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Tabilog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <style type="text/css" href="./style.css"></style>
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <header>
+  	<a id="top"></a>
+
+<!-- ナビゲーション -->
+  <nav>
+    <div class="nav-wrapper white">
+      <ul class="side">
+        <li href="" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-1">マイページ</li>
+        <li href="" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-1">世界地図</li>
+      </ul>
+
+        <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+            <span><%= current_user.nickname %>
+              <ul class="acount">
+                  <li href="" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-1">
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                  </li>
+  
+          </div>
+        <% else %>
+            <div class="grid-6">
+          	  <ul class="acount">
+	            <li href="" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-1">
+	            <%= link_to "ログイン", new_user_session_path %>
+	            </li>
+	            <li href="" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-1">
+	            <%= link_to "新規登録", new_user_registration_path %>
+	            </li>
+	          </ul>
+            </div>
+        <% end %>
+         </span>
+
+      </ul>
+    </div>
+  </nav>
+  <div id="index-banner" class="">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <h1 class="header center cyan-text text-darken-1">Tabilog</h1>
+        <div>
+          <h5>
+            "世界を旅した思い出を多くの人々と共有しよう！"
+          </h5>
+        </div>
+        <div class="row center">
+          <a href="/matelpages/new" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-5">投稿</a>
+        </div>
+      </div>
+    </div>
+</div>
+  </header>
+
+
+	<%= yield %>
+
+</body>
+</html>

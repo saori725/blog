@@ -1,0 +1,14 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_tag('/matelpages', method: :post) do %>
+      <h3>
+        投稿
+      </h3>
+      <input placeholder="country" type="text" name="country">
+      <input placeholder="city" type="text" name="city">
+      <input placeholder="Image Url" type="text" name="image">
+      <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
+      <input type="submit" value="SENT">
+    <% end %>
+  </div>
+</div>
