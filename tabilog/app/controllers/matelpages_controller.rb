@@ -1,9 +1,9 @@
 class MatelpagesController < ApplicationController
-    def index
-      @matelpages = Matelpage.all
-    end
+  def index
+    @matelpages = Matelpage.order("created_at DESC").page(params[:page]).per(5)
+  end
 
-    def show
+  def show
     @matelpage = Matelpage.find(params[:id])
     @comments = @matelpage.comments.includes(:user)
   end

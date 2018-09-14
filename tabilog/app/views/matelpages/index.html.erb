@@ -4,24 +4,19 @@
   あなたの素敵な体験を人々と共有し、更なる旅の始まりを探そう！多くの体験と感動を...</div>
   </div>
 </div>
+
 <div class="container m-padding">
-  <div class="section">
-    <h4 class="center cyan-text text-darken-1 deco">Travel photo</h4>
-   <!--  <%= image_tag "IMG_3554.jpg" %> -->
-
-<div class="contents row" >
-  <% @matelpages.each do |matelpage| %>
-       <div class="content_post" style="background-image: url(<%= matelpage.image %>);">
-        <%= simple_format(matelpage.text) %>
-        <span class="name"><%= matelpage.name %></span>
+  <div class="contents_left">
+     <h4>Travel photo</h4>
+      <div class="box">
+        <% @matelpages.each do |matelpage| %>
+            <span class="content_post" style="background-image: url(<%= matelpage.image %>);">
+            </span>
+            <%= simple_format(matelpage.country) %>
+            <%= simple_format(matelpage.text) %>
+          <% end %>
       </div>
-  <% end %>
-</div>
-
-
-    <a href="#top" class="up-btn">
-      <i class="mdi-hardware-keyboard-arrow-up">
-      </i>
-    </a>
+      <%= paginate(@matelpages) %>
   </div>
 </div>
+

@@ -1,0 +1,11 @@
+
+  <div class="contents_post" style="background-image: url(<%= matelpage.image %>);">
+  	<div class="more">
+    <% @matelpages.each do |matelpage| %>
+        <span class="content_post" style="background-image: url(<%= matelpage.image %>);"></span>
+          <%= simple_format(matelpage.country) %>
+          <%= simple_format(matelpage.text) %>
+        </div>
+    <% end %>
+  </div>
+ </div>

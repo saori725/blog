@@ -1,0 +1,9 @@
+
+    <span class="like">
+      <%= form_for(micropost.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
+        <button type="button"class="btn waves-effect"><i class="material-icons">grade</i></button>
+          <%= content_tag :span, "#{micropost.likes_count}", class: "glyphicon glyphicon-heart" %>
+        <% end %>
+      <% end %>
+  </span>
+
