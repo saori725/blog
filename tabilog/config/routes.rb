@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'likes/create'
-
   get 'likes/destroy'
 
   devise_for :users
@@ -10,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :likes, only: [:create, :destroy]
   resources :matelpages do
-  resources :comments, only: [:create]
+  resources :comments, only: [:create, :new]
   end
   resources :users, only: [:show]
 end

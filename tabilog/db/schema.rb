@@ -11,20 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180913202013) do
+ActiveRecord::Schema.define(version: 20180913202841) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
     t.integer  "matelpage_id", limit: 4
     t.text     "text",         limit: 65535
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.integer  "user_id",      limit: 4, null: false
-    t.integer  "micropost_id", limit: 4, null: false
-    t.integer  "likes_count",  limit: 4, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,6 +30,11 @@ ActiveRecord::Schema.define(version: 20180913202013) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",    limit: 4
+  end
+
+  create_table "microposts", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|

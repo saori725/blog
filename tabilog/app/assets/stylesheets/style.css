@@ -31,9 +31,8 @@ body {
 
 a {
     text-decoration: none;
-    color: #039be5;
+    color: white;
     background-color: transparent;
-
 }
 
 nav {
@@ -71,13 +70,14 @@ li {
     text-align: -webkit-match-parent;
 }
 
-h5{
-    text-align: center;
-}
-
 h4{
     color: white;
 }
+
+h5, h6{
+    text-align: center;
+}
+
 
 p{
     background-color: white;
@@ -91,12 +91,29 @@ p{
     flex-direction: column-reverse;
     display: inline-block;
     background-color: #ccc;
-    background-position: center;
-    background-repeat: no-repeat;
     width: 600px;
     height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
     border: 1px solid #ccc;
     background-size: cover;
+    float:0 auto;
+}
+.content_post2 {
+    flex-direction: column-reverse;
+    display: inline-block;
+    background-color: #ccc;
+    width: 150px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    background-size: cover;
+    margin: 20px 0 0 0;
+}
+
+.box2{
+    padding-right: 50px;
 }
 
 .acount{
@@ -107,17 +124,6 @@ p{
     float:left;
 }
 
-
-.box2{
-    display: inline-block;
-    background-color: #ccc;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 100px;
-    border: 1px solid #ccc;
-    background-size: cover;
-}
 
 .contents_left{
     width: 500px;
@@ -142,4 +148,19 @@ p{
     border: 1px solid #ccc;
     background-size: cover;
 }
+
+.contributer {
+    color: white;
 }
+
+.content_image{
+    padding: 0 0 0 100px;
+}
+
+.content_map2{
+    float:left;
+    width: 150px;
+    height: 150px;
+}
+
+
