@@ -12,14 +12,12 @@
     <style type="text/css" href="./style.css"></style>
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <!-- Compiled and minified CSS -->
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
 
@@ -32,18 +30,23 @@
   <nav>
     <div class="nav-wrapper white">
       <ul class="side">
-        <li href="" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-1">マイページ</li>
-        <li href="" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-1">世界地図</li>
+        <li href="" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-1">
+          <%= link_to "トップページ",  root_path %>
+        </li>
+        <li href="" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-1">
+          <%= link_to "世界地図", matelpages_map_path %>
+        </li> 
       </ul>
 
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <span><%= current_user.nickname %>
-              <ul class="acount">
+                <a href="/users/<%= current_user.id %>">マイページ</a>
+                <ul class="acount">
                   <li href="" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-1">
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                   </li>
-  
+              </ul>
           </div>
         <% else %>
             <div class="grid-6">
@@ -63,9 +66,7 @@
     </div>
   </nav>
   <div id="index-banner" class="">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <h1 class="header center cyan-text text-darken-1">Tabilog</h1>
+      <h1 class="header center cyan-text text-darken-1">Tabilog</h1>
         <div>
           <h5>
             "世界を旅した思い出を多くの人々と共有しよう！"
@@ -74,10 +75,8 @@
         <div class="row center">
           <a href="/matelpages/new" id="download-button" class="btn-large waves-effect waves-light cyan darken-1 z-depth-5">投稿</a>
         </div>
-      </div>
-    </div>
-</div>
-  </header>
+  </div>
+</header>
 
 
 	<%= yield %>

@@ -9,8 +9,8 @@
     <% end %>
     <%= simple_format(@matelpage.text) %>
     <span class="name">
-      <a href="/users/<%= @matelpage.user_id %>">
-        <span>投稿者</span><%= @matelpage.user.nickname %>
+      <a href="/matelpages/#{@matelpage.id}/comments" >
+        <span>nickname</span><%= @matelpage.user.nickname %>
       </a>
     </span>
   </div>
