@@ -1,4 +1,4 @@
-(function ($) {
+$(function ($) {
 
   // Add posibility to scroll to selected option
   // usefull for select for example
